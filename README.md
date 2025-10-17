@@ -1,7 +1,7 @@
 # Kanban-web-app
  Dynamic Kanban board web application built with [daisyUI]. It allows users to create, track, and manage issues across Backlog, In Progress, Review, and Done columns. State persists locally using LocalStorage.
 
- # Spiagazione codice script.js
+ # Spiegazione codice script.js
  ## 1. Selezione degli Elementi del DOM e Stato Iniziale 
 All'inizio, il codice seleziona gli elementi HTML cruciali per l'interazione e definisce una variabile di stato:
 
