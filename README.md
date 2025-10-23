@@ -57,3 +57,9 @@ Se hai Node.js installato, puoi utilizzare **Vite** per servire l'applicazione i
 1. Installa le dipendenze:
 ```bash
 npm install
+2. Avvia il server di sviluppo:
+```bash
+npm run dev
+2. Apri l'applicazione all'indirizzo:
+```bash
+http://localhost:5173
