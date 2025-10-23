@@ -1,5 +1,5 @@
 # Kanban Task Manager
-Un'applicazione web minimalista per la gestione delle task in stile Kanban, realizzata con JavaScript puro, Tailwind CSS e DaisyUI. Questo progetto permette agli utenti di organizzare, tracciare e gestire le task su diverse colonne (To Do, In Progress, ecc.) con funzionalità avanzate come il Drag & Drop, la persistenza dei dati e un conto alla rovescia visivo per le scadenze.
+Un'applicazione web minimalista per la gestione delle task in stile Kanban, realizzata con JavaScript , Tailwind CSS e DaisyUI. Questo progetto permette agli utenti di organizzare, tracciare e gestire le task su diverse colonne (To Do, In Progress, ecc.) con funzionalità avanzate come il Drag & Drop, la persistenza dei dati e un conto alla rovescia visivo per le scadenze.
 
 Caratteristiche Principali
 Organizzazione Kanban: Struttura flessibile a colonne (To Do, In Progress, For Review, Done, Expired) con possibilità di aggiungere categorie personalizzate.
