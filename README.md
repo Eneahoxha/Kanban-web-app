@@ -63,7 +63,13 @@ Segui questi passaggi per installare le dipendenze e avviare l'applicazione in l
 
 ```bash
 npm install
-# 2. Avvia il server di sviluppo
+
+2. Avvia il server di sviluppo
+
+```bash
 npm run dev
-# 3. Apri l'applicazione all'indirizzo 
+
+3. Apri l'applicazione all'indirizzo
+
+```bash 
 http://localhost:5173
