@@ -55,15 +55,16 @@ Questo progetto permette agli utenti di organizzare, tracciare e gestire le task
 Se hai Node.js installato, puoi utilizzare **Vite** per servire l'applicazione in locale con aggiornamento automatico:
 # Istruzioni per l'Avvio
 
+# Istruzioni per l'Avvio
+
 Segui questi passaggi per installare le dipendenze e avviare l'applicazione in locale.
 
----
+## 1. Installa le Dipendenze
 
- 1. Installa le Dipendenze
+Per prima cosa, esegui il seguente comando nel tuo terminale per scaricare e installare tutti i pacchetti necessari:
 
 ```bash
 npm install
-
 2. Avvia il server di sviluppo
 
 ```bash
