@@ -65,12 +65,15 @@ Per prima cosa, esegui il seguente comando nel tuo terminale per scaricare e ins
 
 ```bash
 npm install
-2. Avvia il server di sviluppo
+2. Avvia il Server di Sviluppo
+Dopo aver installato le dipendenze, usa questo comando per avviare il server di sviluppo in locale. Questo processo compila l'applicazione e la rende accessibile:
 
-```bash
+Bash
+
 npm run dev
 
-3. Apri l'applicazione all'indirizzo
 
-```bash 
+3. Apri l'Applicazione
+Una volta che il server è in esecuzione (dovrebbe essere indicato nel terminale), puoi accedere all'applicazione aprendo il browser e navigando a questo indirizzo:
+
 http://localhost:5173
