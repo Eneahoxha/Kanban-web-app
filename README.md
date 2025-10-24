@@ -65,7 +65,7 @@ npm install
 #### 2 Avvia l'Applicazione Dopo l'installazione
 Nel terminale, esegui:
 
-npm run de
+npm run dev
 #### 3 Apri nel Browser
 Una volta avviato, accedi all'applicazione su:
 http://localhost:5173
