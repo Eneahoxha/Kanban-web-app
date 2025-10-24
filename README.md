@@ -1,78 +1,77 @@
-# Kanban Task Manager
+# 🗂️ Kanban Task Manager
 
-Un'applicazione web minimalista per la gestione delle task in stile Kanban, realizzata con **JavaScript**, **Tailwind CSS** e **DaisyUI**.  
-Questo progetto permette agli utenti di organizzare, tracciare e gestire le task su diverse colonne (To Do, In Progress, ecc.) con funzionalità avanzate come **Drag & Drop**, la **persistenza dei dati** e un **conto alla rovescia visivo** per le scadenze.
+Un'applicazione web **minimalista** per la gestione delle task in stile **Kanban**, realizzata con **JavaScript**, **Tailwind CSS** e **DaisyUI**.  
+Questo progetto permette di **organizzare**, **tracciare** e **gestire** le attività su diverse colonne (To Do, In Progress, ecc.) con funzionalità avanzate come **Drag & Drop**, **persistenza dei dati** e **conto alla rovescia visivo** per le scadenze.
 
 ---
 
-## Caratteristiche Principali
+## 🚀 Caratteristiche Principali
 
-- **Organizzazione Kanban:**  
+- 🧩 **Organizzazione Kanban**  
   Struttura flessibile a colonne (To Do, In Progress, For Review, Done, Expired) con possibilità di aggiungere categorie personalizzate.
 
-- **Drag & Drop Interattivo:**  
-  Sposta facilmente le task tra le colonne grazie al Drag & Drop nativo.
+- 🎯 **Drag & Drop Interattivo**  
+  Sposta facilmente le task tra le colonne grazie al **Drag & Drop** nativo.
 
-- **Persistenza dei Dati:**  
-  Tutte le task e le categorie sono salvate localmente nel browser tramite **localStorage** e ricaricate automaticamente.
+- 💾 **Persistenza dei Dati**  
+  Tutte le task e le categorie vengono salvate localmente nel browser tramite **localStorage** e ricaricate automaticamente al riavvio.
 
-- **Conto alla Rovescia Dinamico:**  
-  Le task con data di scadenza mostrano un conto alla rovescia in tempo reale, formattato in giorni, ore, minuti e secondi.
+- ⏳ **Conto alla Rovescia Dinamico**  
+  Le task con data di scadenza mostrano un **countdown in tempo reale**, formattato in giorni, ore, minuti e secondi.
 
-- **Sistema di Allerta Visivo:**  
-  Il colore delle task cambia automaticamente in base alla vicinanza della scadenza:  
-  - Verde: scadenza lontana (oltre 7 giorni)  
-  - Giallo: scadenza vicina (entro 7 giorni)  
-  - Rosso: task scaduta o spostata nella colonna "Expired"
+- ⚠️ **Sistema di Allerta Visivo**  
+  Il colore delle card cambia automaticamente in base alla scadenza:
+  - 🟢 Verde → scadenza oltre 7 giorni  
+  - 🟡 Giallo → scadenza entro 7 giorni  
+  - 🔴 Rosso → task scaduta o nella colonna *Expired*
 
-- **Modali Usabili:**  
-  Interfacce pulite per l'aggiunta di task e categorie, ottimizzate per l'usabilità e il centraggio.
+- 💬 **Modali Usabili e Responsive**  
+  Interfacce pulite per aggiungere task e categorie, ottimizzate per l'usabilità.
 
-- **Modifica ed Eliminazione:**  
-  Funzionalità per modificare il titolo di una task e eliminarla con conferma.
-
----
-
-## Stack Tecnologico
-
-| Componente       | Tecnologia       | Descrizione |
-|-----------------|-----------------|------------|
-| Logica           | JavaScript (ES6+) | Gestione della creazione di task, Drag & Drop, conto alla rovescia e persistenza dei dati |
-| Struttura        | HTML5           | Struttura base del progetto |
-| Stile & Layout   | Tailwind CSS    | Framework utility-first per styling rapido e responsive |
-| Componenti UI    | DaisyUI         | Plugin per Tailwind che fornisce modali, bottoni, cards, ecc. |
-| Icone            | Bootstrap Icons | Iconografia per azioni (modifica, elimina, scadenze) |
+- 📝 **Modifica ed Eliminazione**  
+  Possibilità di modificare il titolo di una task o eliminarla con conferma.
 
 ---
 
-## Istruzioni per l'Avvio
+## 🧠 Stack Tecnologico
 
-### A. Esecuzione Semplice (Browser)
-1. Scarica tutti i file (`index.html`, `main.js`, ecc.).  
-2. Apri il file `index.html` direttamente nel browser.
-
-### B. Esecuzione con Server Locale (Consigliato per Sviluppo)
-Se hai Node.js installato, puoi utilizzare **Vite** per servire l'applicazione in locale con aggiornamento automatico:
-
-# Istruzioni per l'Avvio
-
-Segui questi passaggi per installare le dipendenze e avviare l'applicazione in locale.
+| Componente       | Tecnologia         | Descrizione |
+|------------------|-------------------|-------------|
+| **Logica**       | JavaScript (ES6+) | Gestione di creazione, Drag & Drop, countdown e persistenza |
+| **Struttura**    | HTML5             | Layout e struttura base del progetto |
+| **Stile**        | Tailwind CSS      | Framework utility-first per uno styling veloce e responsive |
+| **UI Components**| DaisyUI           | Plugin per Tailwind che fornisce modali, bottoni e cards |
+| **Icone**        | Bootstrap Icons   | Iconografia per azioni (modifica, elimina, scadenze) |
 
 ---
 
-## 1. Installa le Dipendenze
+## ⚙️ Istruzioni per l'Avvio
 
-Per prima cosa, esegui il seguente comando nel tuo terminale per scaricare e installare tutti i pacchetti necessari:
+### 🅰️ Esecuzione Semplice (Browser)
+
+1. Scarica tutti i file del progetto (`index.html`, `main.js`, ecc.).  
+2. Apri **index.html** direttamente nel browser.
+
+---
+
+### 🅱️ Esecuzione con Server Locale (Consigliato per Sviluppo)
+
+Se hai **Node.js** installato, puoi usare **Vite** per servire l’app localmente con aggiornamento automatico.
+
+#### 1️⃣ Installa le Dipendenze
+
+Nel terminale, esegui:
 
 ```bash
 npm install
-2. Avvia l'Applicazione
-Una volta completata l'installazione, puoi avviare l'applicazione con:
+2️⃣ Avvia l'Applicazione
 
+Dopo l’installazione, avvia l’app con:
 
 npm run dev
-3. Accedi all'Applicazione
-Dopo l'avvio, apri il browser e vai all'indirizzo:
 
-Copy code
+3️⃣ Apri nel Browser
+
+Una volta avviato, accedi all’applicazione su:
+
 http://localhost:5173
