@@ -58,16 +58,16 @@ Questo progetto permette di **organizzare**, **tracciare** e **gestire** le atti
 
 Se hai **Node.js** installato, puoi usare **Vite** per servire l’app localmente con aggiornamento automatico.
 
-# 1 Installa le Dipendenze
+#### 1 Installa le Dipendenze
 Nel terminale, esegui:
 
 npm install
-#### 2 Avvia l'Applicazione  // <--- Questo è un sottotitolo (####) non un'intestazione principale (#)
+#### 2 Avvia l'Applicazione
 
 Dopo l'installazione, avvia l'app con:
 
 npm run dev
-#### 3 Apri nel Browser  // <--- Anche questo è un sottotitolo (####)
+#### 3 Apri nel Browser
 
 Una volta avviato, accedi all'applicazione su:
 
