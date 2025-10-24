@@ -64,13 +64,13 @@ Nel terminale, esegui:
 
 ```bash
 npm install
-2️⃣ Avvia l'Applicazione
+#### 2️⃣ Avvia l'Applicazione
 
 Dopo l’installazione, avvia l’app con:
 
 npm run dev
 
-3️⃣ Apri nel Browser
+#### 3️⃣ Apri nel Browser
 
 Una volta avviato, accedi all’applicazione su:
 
