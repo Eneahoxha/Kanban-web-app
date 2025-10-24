@@ -59,7 +59,7 @@ Segui questi passaggi per installare le dipendenze e avviare l'applicazione in l
 
 ---
 
-## 1. Installa le Dipendenze
+ 1. Installa le Dipendenze
 
 ```bash
 npm install
