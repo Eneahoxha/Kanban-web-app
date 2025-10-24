@@ -59,21 +59,27 @@ Se hai Node.js installato, puoi utilizzare **Vite** per servire l'applicazione i
 
 Segui questi passaggi per installare le dipendenze e avviare l'applicazione in locale.
 
+# 🧭 Istruzioni per l'Avvio
+
+Segui questi passaggi per installare le dipendenze e avviare l'applicazione in locale.
+
+---
+
 ## 1. Installa le Dipendenze
 
 Per prima cosa, esegui il seguente comando nel tuo terminale per scaricare e installare tutti i pacchetti necessari:
 
 ```bash
 npm install
-2. Avvia il Server di Sviluppo
-Dopo aver installato le dipendenze, usa questo comando per avviare il server di sviluppo in locale. Questo processo compila l'applicazione e la rende accessibile:
+2. Avvia l'Applicazione
+Una volta completata l'installazione, puoi avviare l'applicazione con:
 
-Bash
+bash
+Copy code
+npm start
+3. Accedi all'Applicazione
+Dopo l'avvio, apri il browser e vai all'indirizzo:
 
-npm run dev
-
-
-3. Apri l'Applicazione
-Una volta che il server è in esecuzione (dovrebbe essere indicato nel terminale), puoi accedere all'applicazione aprendo il browser e navigando a questo indirizzo:
-
-http://localhost:5173
+arduino
+Copy code
+http://localhost:3000
