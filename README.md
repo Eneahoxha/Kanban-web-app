@@ -21,6 +21,7 @@ Questo progetto permette di **organizzare**, **tracciare** e **gestire** le atti
 
 - ⚠️ **Sistema di Allerta Visivo**  
   Il colore delle card cambia automaticamente in base alla scadenza:
+  
   🟢 Verde → scadenza oltre 7 giorni  
   🟡 Giallo → scadenza entro 7 giorni  
   🔴 Rosso → task scaduta o nella colonna *Expired*
