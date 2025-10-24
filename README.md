@@ -53,13 +53,9 @@ Questo progetto permette agli utenti di organizzare, tracciare e gestire le task
 
 ### B. Esecuzione con Server Locale (Consigliato per Sviluppo)
 Se hai Node.js installato, puoi utilizzare **Vite** per servire l'applicazione in locale con aggiornamento automatico:
-
-1.Installa le dipendenze:
-```bash
+# 1. Installa le dipendenze
 npm install
-2. Avvia il server di sviluppo:
-```bash
+# 2. Avvia il server di sviluppo
 npm run dev
-2. Apri l'applicazione all'indirizzo:
-```bash
+# 3. Apri l'applicazione all'indirizzo 
 http://localhost:5173
