@@ -60,15 +60,14 @@ Se hai **Node.js** installato, puoi usare **Vite** per servire l’app localment
 
 #### 1 Installa le Dipendenze
 Nel terminale, esegui:
-
+'''bash
 npm install
 #### 2 Avvia l'Applicazione
 
 Dopo l'installazione, avvia l'app con:
-
+'''bash
 npm run dev
 #### 3 Apri nel Browser
 
 Una volta avviato, accedi all'applicazione su:
-
 http://localhost:5173
