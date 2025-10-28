@@ -754,7 +754,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     
-    // 9. Avvio dell'orologio globale
-    updateGlobalClock(); 
-    setInterval(updateGlobalClock, 1000);
+    function updateGlobalClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  document.getElementById('global-clock-time').textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Aggiorna subito
+updateGlobalClock();
+
+// Aggiorna ogni secondo allineando al vero secondo
+setTimeout(function tick() {
+  updateGlobalClock();
+  const now = new Date();
+  setTimeout(tick, 1000 - now.getMilliseconds()); // sincronizza ogni secondo
+}, 1000 - new Date().getMilliseconds());
+
 });
