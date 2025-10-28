@@ -65,7 +65,7 @@ Nel terminale, esegui:
 npm install
 #### 2 Avvia l'Applicazione Dopo l'installazione
 Nel terminale, esegui:
-'''bash
+
 npm run dev
 
 #### 3 Apri nel Browser
