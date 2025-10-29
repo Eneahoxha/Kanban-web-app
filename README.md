@@ -99,54 +99,93 @@ currentTask: Una variabile temporanea usata per memorizzare l'istanza della task
 formatTime: Una semplice funzione utility per aggiungere uno zero iniziale ai numeri inferiori a 10 (es. 9 diventa "09"), usata per l'orologio e il countdown.
 
 ## 🕒 SEZIONE 2: Orologio e Timer Globali
-updateGlobalClock(): Questa funzione aggiorna un elemento nell'interfaccia (global-clock-time) con l'ora e la data formattate in italiano ('it-IT').
+#### updateGlobalClock(): 
+Questa funzione aggiorna un elemento nell'interfaccia (global-clock-time) con l'ora e la data formattate in italiano ('it-IT').
 
-L'aggiornamento Globale: Le ultime righe nel blocco DOMContentLoaded gestiscono l'avvio e la sincronizzazione dell'orologio globale, assicurando che si aggiorni ogni secondo.
+#### L'aggiornamento Globale: 
+Le ultime righe nel blocco DOMContentLoaded gestiscono l'avvio e la sincronizzazione dell'orologio globale, assicurando che si aggiorni ogni secondo.
 
 ## 🛠️ SEZIONE 3: La Classe KanbanTask (Il Cuore della Logica)
-La classe KanbanTask incapsula lo stato (dati) e il comportamento (metodi) di una singola task.
+#### constructor:
+"Crea una nuova istanza. Genera un ID univoco.
 
-Metodo/Proprietà	Descrizione
-constructor	Crea una nuova istanza. Genera un ID univoco (crypto.randomUUID()), inizializza le proprietà (titolo, scadenza, priorità, colonna) e chiama createDomElement() per creare l'HTML. Aggiunge l'istanza alla taskInstances Map. Avvia il countdown se è presente una scadenza.
-createDomElement()	Genera l'elemento div HTML che rappresenta la task sulla bacheca. Configura gli attributi per il Drag & Drop e aggiunge i pulsanti di modifica/eliminazione. Aggiunge gli handler per dragstart e dragend.
-getPriorityBadgeHtml()	Restituisce il codice HTML per il badge di priorità con la classe di colore corretta (badge-error, badge-warning, badge-success).
-updateColor()	Metodo complesso che determina l'aspetto visivo (colore di sfondo e bordo) della task in base a 3 fattori in ordine di precedenza: 1. Stato Terminale (verde per "Done", rosso scuro per "Expired"), 2. Scadenza (rosso se vicina o scaduta, giallo se prossima, verde se lontana), 3. Priorità (usata per il colore del bordo se non ci sono conflitti di scadenza).
-stopCountdown()	Interrompe il timer di countdown (clearInterval).
-updatePriority()	Aggiorna la priorità della task, ricrea il badge, chiama updateColor() e saveTasks().
-checkAndMoveExpired()	Controlla se la data di scadenza è passata. Se è scaduta e non è nelle colonne "Done" o "Expired", ferma il countdown, aggiorna la colonna a 'expired-col' e sposta l'elemento DOM nella colonna scaduta.
-updateCountdown()	Calcola e aggiorna l'elemento HTML del countdown con giorni, ore, minuti e secondi rimanenti. Chiama checkAndMoveExpired() ad ogni tick per reagire in tempo reale.
-startCountdown()	Avvia il timer di aggiornamento di 1 secondo per il countdown.
-updateColumn(newColumnId)	Aggiorna l'ID della colonna della task (usato dal Drop Handler). Ferma o avvia il countdown a seconda che la nuova colonna sia "Done" / "Expired" o meno.
+#### (crypto.randomUUID()):
+inizializza le proprietà (titolo, scadenza, priorità, colonna) e chiama
+#### createDomElement():
+per creare l'HTML. Aggiunge l'istanza alla taskInstances Map. Avvia il countdown se è presente una scadenza."
+
+#### createDomElement():
+Genera l'elemento div HTML che rappresenta la task sulla bacheca. Configura gli attributi per il Drag & Drop e aggiunge i pulsanti di modifica/eliminazione. Aggiunge gli handler per dragstart e dragend.
+
+#### getPriorityBadgeHtml():
+"Restituisce il codice HTML per il badge di priorità con la classe di colore corretta (badge-error, badge-warning, badge-success)."
+
+#### updateColor():
+"Metodo complesso che determina l'aspetto visivo (colore di sfondo e bordo) della task in base a 3 fattori in ordine di precedenza: 
+1. Stato Terminale (verde per ""Done"", rosso scuro per ""Expired""),
+2. Scadenza (rosso se vicina o scaduta, giallo se prossima, verde se lontana),
+3. Priorità (usata per il colore del bordo se non ci sono conflitti di scadenza)."
+
+#### stopCountdown():
+Interrompe il timer di countdown (clearInterval).
+
+#### updatePriority():
+"Aggiorna la priorità della task, ricrea il badge, chiama updateColor() e saveTasks()."
+
+#### checkAndMoveExpired():
+"Controlla se la data di scadenza è passata. Se è scaduta e non è nelle colonne ""Done"" o ""Expired"", ferma il countdown, aggiorna la colonna a 'expired-col' e sposta l'elemento DOM nella colonna scaduta."
+
+#### updateCountdown():
+"Calcola e aggiorna l'elemento HTML del countdown con giorni, ore, minuti e secondi rimanenti. Chiama checkAndMoveExpired() ad ogni tick per reagire in tempo reale."
+
+#### startCountdown():
+Avvia il timer di aggiornamento di 1 secondo per il countdown.
+
+#### updateColumn(newColumnId):
+"Aggiorna l'ID della colonna della task (usato dal Drop Handler). Ferma o avvia il countdown a seconda che la nuova colonna sia ""Done"" / ""Expired"" o meno."
+
 ## 💾 SEZIONE 4: Manipolazione Stato e Persistenza
 Queste funzioni gestiscono il salvataggio dei dati e l'aggiornamento dell'interfaccia.
 
-saveTasks(): Itera su tutte le colonne e gli elementi task nel DOM. Per ogni elemento, recupera l'istanza KanbanTask dalla Map e crea un oggetto di dati JSON con le sue proprietà. Infine, salva l'array JSON nel localStorage con la chiave STORAGE_KEY.
+#### saveTasks(): 
+Itera su tutte le colonne e gli elementi task nel DOM. Per ogni elemento, recupera l'istanza KanbanTask dalla Map e crea un oggetto di dati JSON con le sue proprietà. Infine, salva l'array JSON nel localStorage con la chiave STORAGE_KEY.
 
-updateTaskCount(): Aggiorna il badge numerico che mostra quante task sono presenti in una specifica colonna.
+#### updateTaskCount(): 
+Aggiorna il badge numerico che mostra quante task sono presenti in una specifica colonna.
 
-observeTaskChanges(): Utilizza la MutationObserver per monitorare i cambiamenti (aggiunta/rimozione di task) all'interno del contenitore delle task di ogni colonna. Quando viene rilevato un cambiamento (es. Drag & Drop o eliminazione), chiama updateTaskCount() e saveTasks().
+#### observeTaskChanges(): 
+Utilizza la MutationObserver per monitorare i cambiamenti (aggiunta/rimozione di task) all'interno del contenitore delle task di ogni colonna. Quando viene rilevato un cambiamento (es. Drag & Drop o eliminazione), chiama updateTaskCount() e saveTasks().
 
-checkAllTasksOnLoad(): Al caricamento, scorre tutte le task esistenti e chiama instance.checkAndMoveExpired() per spostare immediatamente eventuali task scadute (es. scadute mentre il browser era chiuso).
+#### checkAllTasksOnLoad(): 
+Al caricamento, scorre tutte le task esistenti e chiama instance.checkAndMoveExpired() per spostare immediatamente eventuali task scadute (es. scadute mentre il browser era chiuso).
 
 ## 🖱️ SEZIONE 5: Handlers Eventi Principali (Drag & Drop, Modifica)
 handleDragstart/handleDragend: Gestiscono l'inizio e la fine dell'azione di trascinamento, aggiungendo/rimuovendo la classe .dragging. Impediscono il trascinamento delle task già scadute.
 
-handleDragover: Gestisce il movimento di trascinamento. Contiene la logica per impedire che le task vengano rilasciate nella colonna "Expired" e per determinare la posizione esatta di rilascio tra le altre task.
+#### handleDragover: 
+Gestisce il movimento di trascinamento. Contiene la logica per impedire che le task vengano rilasciate nella colonna "Expired" e per determinare la posizione esatta di rilascio tra le altre task.
 
-handleDrop: Gestisce il rilascio. Aggiorna l'istanza della task con il nuovo columnId chiamando instance.updateColumn(), e poi salva lo stato.
+#### handleDrop: 
+Gestisce il rilascio. Aggiorna l'istanza della task con il nuovo columnId chiamando instance.updateColumn(), e poi salva lo stato.
 
-handleBlur/handleKeyDown: Gestiscono la modifica in linea del titolo della task. Quando l'utente clicca fuori o preme "Invio" su un titolo modificabile (contenteditable='true'), il titolo viene salvato e l'attributo contenteditable viene disattivato.
+#### handleBlur/handleKeyDown: 
+Gestiscono la modifica in linea del titolo della task. Quando l'utente clicca fuori o preme "Invio" su un titolo modificabile (contenteditable='true'), il titolo viene salvato e l'attributo contenteditable viene disattivato.
 
-handleTaskAction: Gestisce i click sui pulsanti all'interno di una task:
+#### handleTaskAction: 
+Gestisce i click sui pulsanti all'interno di una task:
 
-Edit: Rende il titolo modificabile e sposta il cursore alla fine del testo.
+#### Edit: 
+Rende il titolo modificabile e sposta il cursore alla fine del testo.
 
-Delete: Imposta la task corrente in currentTask e mostra la modale di conferma eliminazione.
+#### Delete: 
+Imposta la task corrente in currentTask e mostra la modale di conferma eliminazione.
 
 ## ➕ SEZIONE 6: Gestione Aggiunta (Modali)
-handleAddTask(): Gestisce la creazione di una Nuova Task. Mostra la modale di creazione e, al submit del form, crea una nuova istanza KanbanTask con i dati inseriti, l'aggiunge al DOM della colonna corretta e salva le modifiche.
+#### handleAddTask(): 
+Gestisce la creazione di una Nuova Task. Mostra la modale di creazione e, al submit del form, crea una nuova istanza KanbanTask con i dati inseriti, l'aggiunge al DOM della colonna corretta e salva le modifiche.
 
-handleAddCategory(): Gestisce la creazione di una Nuova Categoria (colonna). Crea l'elemento DOM della nuova colonna e la inserisce prima della colonna "Done".
+#### handleAddCategory(): 
+Gestisce la creazione di una Nuova Categoria (colonna). Crea l'elemento DOM della nuova colonna e la inserisce prima della colonna "Done".
 
 ## 🚀 SEZIONE 7: Inizializzazione
 Il blocco document.addEventListener('DOMContentLoaded', ...) è il punto di partenza:
