@@ -157,7 +157,9 @@ Aggiorna il badge numerico che mostra quante task sono presenti in una specifica
 Utilizza la MutationObserver per monitorare i cambiamenti (aggiunta/rimozione di task) all'interno del contenitore delle task di ogni colonna. Quando viene rilevato un cambiamento (es. Drag & Drop o eliminazione), chiama updateTaskCount() e saveTasks().
 
 #### checkAllTasksOnLoad(): 
-Al caricamento, scorre tutte le task esistenti e chiama instance.checkAndMoveExpired() per spostare immediatamente eventuali task scadute (es. scadute mentre il browser era chiuso).
+Al caricamento, scorre tutte le task esistenti e chiama
+### instance.checkAndMoveExpired():
+per spostare immediatamente eventuali task scadute (es. scadute mentre il browser era chiuso).
 
 ## 🖱️ SEZIONE 5: Handlers Eventi Principali (Drag & Drop, Modifica)
 handleDragstart/handleDragend: Gestiscono l'inizio e la fine dell'azione di trascinamento, aggiungendo/rimuovendo la classe .dragging. Impediscono il trascinamento delle task già scadute.
